@@ -4,7 +4,7 @@ MONITOR=$1
 DEST=$2
 SEARCH=$3
 
-if [ $SEARCH -eq "all" ]; then
+if [[ $SEARCH == "all" ]]; then
     while true;
     do
         for i in $(find $MONITOR -type f);
@@ -17,10 +17,10 @@ if [ $SEARCH -eq "all" ]; then
         done
         sleep 15;
     done
-else
+elif [[ $SEARCH == "markdown" ]]; then
     while true;
     do
-        for i in $(find $MONITOR -type f -name "$SEARCH");
+        for i in $(find $MONITOR -type f -name '*.md');
         do
             iscomplete=$(cat $i | grep "#complete" | wc -w);
         
@@ -30,4 +30,4 @@ else
         done
         sleep 15;
     done
-
+fi
