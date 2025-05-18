@@ -30,4 +30,10 @@ elif [[ $SEARCH == "markdown" ]]; then
         done
         sleep 15;
     done
+else
+    echo "Invalid Use."
+    echo "Usage: ./obsidianmover.sh MONITOR_DIR MOVE_DIR [markdown|all]"
+    echo "MONITOR_DIR - The directory you wish to monitor for the added #complete tag."
+    echo "MOVE_DIR - When the #complete tag is added, move the file to this directory."
+    echo "[markdown|all] Choose one. More to come."
 fi
