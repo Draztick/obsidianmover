@@ -17,7 +17,7 @@ if [ $SEARCH -eq "all" ]; then
         done
         sleep 15;
     done
-else;
+else
     while true;
     do
         for i in $(find $MONITOR -type f -name "$SEARCH");
